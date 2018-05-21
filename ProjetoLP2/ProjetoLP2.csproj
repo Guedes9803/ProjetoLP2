@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{576AA950-9936-49E2-BB60-9F4EF5BF39C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoLP2</RootNamespace>
+    <AssemblyName>ProjetoLP2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addPartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addPartControl.Designer.cs">
+      <DependentUpon>addPartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addVariosPartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addVariosPartControl.Designer.cs">
+      <DependentUpon>addVariosPartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="altTorneioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="altTorneioControl.Designer.cs">
+      <DependentUpon>altTorneioControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="criarTorneioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="criarTorneioControl.Designer.cs">
+      <DependentUpon>criarTorneioControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="partControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="partControl.Designer.cs">
+      <DependentUpon>partControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tabelaTorneio8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tabelaTorneio8.Designer.cs">
+      <DependentUpon>tabelaTorneio8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TorneiosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TorneiosControl.Designer.cs">
+      <DependentUpon>TorneiosControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addPartControl.resx">
+      <DependentUpon>addPartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addVariosPartControl.resx">
+      <DependentUpon>addVariosPartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="altTorneioControl.resx">
+      <DependentUpon>altTorneioControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarTorneioControl.resx">
+      <DependentUpon>criarTorneioControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="partControl.resx">
+      <DependentUpon>partControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="tabelaTorneio8.resx">
+      <DependentUpon>tabelaTorneio8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TorneiosControl.resx">
+      <DependentUpon>TorneiosControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %282%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
