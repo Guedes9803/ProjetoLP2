@@ -102,7 +102,7 @@ namespace ProjetoLP2
         {
             MySqlConnection conn = new MySqlConnection();
 
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root; Pwd=Malued01@lol;";
+            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root;";
             
         try
             {

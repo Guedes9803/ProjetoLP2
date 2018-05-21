@@ -46,7 +46,7 @@ namespace ProjetoLP2
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root; Pwd=Malued01@lol;";
+            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root;";
             try
             {
                 
