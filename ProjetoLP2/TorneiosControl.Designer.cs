@@ -35,20 +35,25 @@
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnTab = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.altTorneioControl1 = new ProjetoLP2.altTorneioControl();
             this.criarTorneioControl1 = new ProjetoLP2.criarTorneioControl();
             this.addVariosPartControl1 = new ProjetoLP2.addVariosPartControl();
-            this.altTorneioControl1 = new ProjetoLP2.altTorneioControl();
             ((System.ComponentModel.ISupportInitialize)(this.dtTeste)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
             this.button1.Location = new System.Drawing.Point(160, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 85);
             this.button1.TabIndex = 1;
             this.button1.Text = "Criar Torneio";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtTeste
@@ -73,22 +78,32 @@
             // 
             // btnAtualizar
             // 
+            this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.ForeColor = System.Drawing.Color.White;
             this.btnAtualizar.Location = new System.Drawing.Point(396, 403);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(192, 85);
             this.btnAtualizar.TabIndex = 5;
             this.btnAtualizar.Text = "Alterar Informações";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnTab
             // 
+            this.btnTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnTab.FlatAppearance.BorderSize = 0;
+            this.btnTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTab.ForeColor = System.Drawing.SystemColors.Window;
             this.btnTab.Location = new System.Drawing.Point(616, 403);
             this.btnTab.Name = "btnTab";
             this.btnTab.Size = new System.Drawing.Size(192, 85);
             this.btnTab.TabIndex = 5;
             this.btnTab.Text = "Gerar Tabela";
-            this.btnTab.UseVisualStyleBackColor = true;
+            this.btnTab.UseVisualStyleBackColor = false;
             this.btnTab.Click += new System.EventHandler(this.btnGerar_Click);
             // 
             // button2
@@ -101,21 +116,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // criarTorneioControl1
-            // 
-            this.criarTorneioControl1.Location = new System.Drawing.Point(74, 36);
-            this.criarTorneioControl1.Name = "criarTorneioControl1";
-            this.criarTorneioControl1.Size = new System.Drawing.Size(858, 361);
-            this.criarTorneioControl1.TabIndex = 7;
-            this.criarTorneioControl1.Load += new System.EventHandler(this.criarTorneioControl1_Load);
-            // 
-            // addVariosPartControl1
-            // 
-            this.addVariosPartControl1.Location = new System.Drawing.Point(71, 36);
-            this.addVariosPartControl1.Name = "addVariosPartControl1";
-            this.addVariosPartControl1.Size = new System.Drawing.Size(858, 361);
-            this.addVariosPartControl1.TabIndex = 8;
-            // 
             // altTorneioControl1
             // 
             this.altTorneioControl1.Location = new System.Drawing.Point(71, 36);
@@ -124,16 +124,30 @@
             this.altTorneioControl1.TabIndex = 6;
             this.altTorneioControl1.Load += new System.EventHandler(this.altTorneioControl1_Load);
             // 
+            // criarTorneioControl1
+            // 
+            this.criarTorneioControl1.Location = new System.Drawing.Point(65, 24);
+            this.criarTorneioControl1.Name = "criarTorneioControl1";
+            this.criarTorneioControl1.Size = new System.Drawing.Size(864, 373);
+            this.criarTorneioControl1.TabIndex = 9;
+            // 
+            // addVariosPartControl1
+            // 
+            this.addVariosPartControl1.Location = new System.Drawing.Point(65, 24);
+            this.addVariosPartControl1.Name = "addVariosPartControl1";
+            this.addVariosPartControl1.Size = new System.Drawing.Size(864, 373);
+            this.addVariosPartControl1.TabIndex = 10;
+            // 
             // TorneiosControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.criarTorneioControl1);
             this.Controls.Add(this.btnTab);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.lblTeste);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.criarTorneioControl1);
             this.Controls.Add(this.addVariosPartControl1);
             this.Controls.Add(this.altTorneioControl1);
             this.Controls.Add(this.dtTeste);
@@ -153,8 +167,8 @@
         private System.Windows.Forms.Label lblTeste;
         private System.Windows.Forms.Button btnAtualizar;
         private altTorneioControl altTorneioControl1;
+        private System.Windows.Forms.Button btnTab;
         private criarTorneioControl criarTorneioControl1;
         private addVariosPartControl addVariosPartControl1;
-        private System.Windows.Forms.Button btnTab;
     }
 }

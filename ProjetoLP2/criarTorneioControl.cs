@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace ProjetoLP2
 {
     public partial class criarTorneioControl : UserControl
@@ -140,5 +141,29 @@ namespace ProjetoLP2
                 conn.Close();
             }
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            if(txtNome.Text == "Nome do Torneio")
+            {
+                txtNome.Text = "";
+                txtNome.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtNome_Leave(object sender, EventArgs e)
+        {
+            if (txtNome.Text == "")
+            {
+                txtNome.Text = "Nome do Torneio";
+                txtNome.ForeColor = Color.Silver;
+            }
+        }
+
+
     }
 }

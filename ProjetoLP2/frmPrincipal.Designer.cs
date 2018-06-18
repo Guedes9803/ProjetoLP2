@@ -41,6 +41,7 @@
             this.partControl1 = new ProjetoLP2.partControl();
             this.torneiosControl1 = new ProjetoLP2.TorneiosControl();
             this.homeControl1 = new ProjetoLP2.HomeControl();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.SideBar);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.participanteBtn);
@@ -80,7 +82,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(190, 46);
             this.button4.TabIndex = 4;
-            this.button4.Text = "          Home";
+            this.button4.Text = "     Calendário";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -144,6 +146,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(988, 24);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panel4
             // 
@@ -168,7 +172,7 @@
             // 
             // partControl1
             // 
-            this.partControl1.Location = new System.Drawing.Point(197, 130);
+            this.partControl1.Location = new System.Drawing.Point(199, 130);
             this.partControl1.Name = "partControl1";
             this.partControl1.Size = new System.Drawing.Size(988, 510);
             this.partControl1.TabIndex = 6;
@@ -176,7 +180,7 @@
             // 
             // torneiosControl1
             // 
-            this.torneiosControl1.Location = new System.Drawing.Point(201, 130);
+            this.torneiosControl1.Location = new System.Drawing.Point(199, 130);
             this.torneiosControl1.Name = "torneiosControl1";
             this.torneiosControl1.Size = new System.Drawing.Size(984, 513);
             this.torneiosControl1.TabIndex = 5;
@@ -184,22 +188,31 @@
             // 
             // homeControl1
             // 
-            this.homeControl1.Location = new System.Drawing.Point(202, 127);
+            this.homeControl1.Location = new System.Drawing.Point(199, 127);
             this.homeControl1.Name = "homeControl1";
             this.homeControl1.Size = new System.Drawing.Size(983, 513);
             this.homeControl1.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Location = new System.Drawing.Point(0, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(196, 118);
+            this.panel3.TabIndex = 5;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 643);
-            this.Controls.Add(this.partControl1);
-            this.Controls.Add(this.torneiosControl1);
             this.Controls.Add(this.homeControl1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.partControl1);
+            this.Controls.Add(this.torneiosControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -225,6 +238,7 @@
         private HomeControl homeControl1;
         private TorneiosControl torneiosControl1;
         private partControl partControl1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

@@ -34,19 +34,24 @@
             // 
             // btnCriarPart
             // 
+            this.btnCriarPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnCriarPart.FlatAppearance.BorderSize = 0;
+            this.btnCriarPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriarPart.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnCriarPart.ForeColor = System.Drawing.Color.White;
             this.btnCriarPart.Location = new System.Drawing.Point(414, 429);
             this.btnCriarPart.Name = "btnCriarPart";
             this.btnCriarPart.Size = new System.Drawing.Size(132, 46);
             this.btnCriarPart.TabIndex = 0;
             this.btnCriarPart.Text = "Adicionar Participante";
-            this.btnCriarPart.UseVisualStyleBackColor = true;
+            this.btnCriarPart.UseVisualStyleBackColor = false;
             this.btnCriarPart.Click += new System.EventHandler(this.button1_Click);
             // 
             // addPartControl1
             // 
             this.addPartControl1.Location = new System.Drawing.Point(361, 108);
             this.addPartControl1.Name = "addPartControl1";
-            this.addPartControl1.Size = new System.Drawing.Size(232, 223);
+            this.addPartControl1.Size = new System.Drawing.Size(297, 223);
             this.addPartControl1.TabIndex = 1;
             this.addPartControl1.Load += new System.EventHandler(this.addPartControl1_Load);
             // 

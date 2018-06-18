@@ -136,5 +136,10 @@ namespace ProjetoLP2
             lblPersonagem.Visible = false;
             this.Visible = false;
         }
+
+        private void lblPersonagem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
