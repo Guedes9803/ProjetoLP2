@@ -74,9 +74,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(36, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 13);
+            this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Quantidade de Participantes";
+            this.label4.Text = "Participantes";
             // 
             // txtNome
             // 
@@ -88,9 +88,9 @@
             // 
             // txtQtd
             // 
-            this.txtQtd.Location = new System.Drawing.Point(196, 169);
+            this.txtQtd.Location = new System.Drawing.Point(117, 169);
             this.txtQtd.Name = "txtQtd";
-            this.txtQtd.Size = new System.Drawing.Size(100, 20);
+            this.txtQtd.Size = new System.Drawing.Size(160, 20);
             this.txtQtd.TabIndex = 4;
             // 
             // btnAtualizar

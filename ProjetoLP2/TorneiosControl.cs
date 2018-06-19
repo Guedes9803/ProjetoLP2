@@ -18,23 +18,26 @@ namespace ProjetoLP2
         private String dt_ini;
         private String dt_term;
         private String part;
+        private connection conex = new connection();
+
+
 
         public TorneiosControl()
         {
             InitializeComponent();
-            MySqlConnection conn = new MySqlConnection();
+            PreencherTabela();
 
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root; Pwd=Malued01@lol;";
+        }
 
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
-
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM torneio", conn);
+        private void PreencherTabela()
+        {
+            conex.conectar();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM torneio", conex.conn);
             DataTable dt = new DataTable();
             try
             {
-                 da.Fill(dt);
-                 dtTeste.DataSource = dt;
+                da.Fill(dt);
+                dtTeste.DataSource = dt;
                 this.dtTeste.Columns["id_torneio"].Visible = false;
             }
             catch (Exception)
@@ -44,9 +47,8 @@ namespace ProjetoLP2
             }
             finally
             {
-                conn.Close();
+                conex.conn.Close();
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,30 +67,7 @@ namespace ProjetoLP2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection();
-
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root; Pwd=Malued01@lol;";
-
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
-
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM torneio", conn);
-            DataTable dt = new DataTable();
-            try
-            {
-                da.Fill(dt);
-                dtTeste.DataSource = dt;
-                this.dtTeste.Columns["id_torneio"].Visible = false;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                conn.Close();
-            }
+            PreencherTabela(); 
         }
 
         private void dtTeste_DoubleClick(object sender, EventArgs e)
@@ -141,6 +120,11 @@ namespace ProjetoLP2
         {
             tabelaTorneio8 janela = new tabelaTorneio8(id);
             janela.Show();
+        }
+
+        private void criarTorneioControl1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

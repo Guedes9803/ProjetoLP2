@@ -50,7 +50,7 @@
             this.lblTexto1.Size = new System.Drawing.Size(211, 19);
             this.lblTexto1.TabIndex = 0;
             this.lblTexto1.Text = "Torneio criado com sucesso!";
-            this.lblTexto1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // lblTexto2
             // 

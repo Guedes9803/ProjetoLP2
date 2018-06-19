@@ -11,10 +11,12 @@ using MySql.Data.MySqlClient;
 
 namespace ProjetoLP2
 {
+
     public partial class addVariosPartControl : UserControl
     {
         private static int qtd;
         private int Index = 1;
+        private connection conex = new connection();
 
         public addVariosPartControl()
         {
@@ -27,10 +29,7 @@ namespace ProjetoLP2
             qtd = part;            
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnSim_Click(object sender, EventArgs e)
         {
@@ -69,21 +68,18 @@ namespace ProjetoLP2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection();
 
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root; Pwd=Malued01@lol;";
             try
             {
-                if (conn.State != System.Data.ConnectionState.Open)
-                    conn.Open();
+                conex.conectar();
 
                 string sql = "INSERT INTO participant(nome, personagem) VALUES('" +
                     txtNome.Text + "','" +
                     txtPers.Text + "')";
                 string sql2 = "insert into part_torn values ((select max(id_part) from participant),(select max(id_torneio) from torneio))";
 
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
+                MySqlCommand cmd2 = new MySqlCommand(sql2, conex.conn);
                 cmd.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();
 
@@ -117,7 +113,7 @@ namespace ProjetoLP2
             }
             finally
             {
-                conn.Close();
+                conex.conn.Close();
             }
 
         }

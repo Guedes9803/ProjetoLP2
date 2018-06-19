@@ -69,6 +69,7 @@
     <Compile Include="altTorneioControl.Designer.cs">
       <DependentUpon>altTorneioControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="connection.cs" />
     <Compile Include="criarTorneioControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

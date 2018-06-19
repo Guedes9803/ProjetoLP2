@@ -20,6 +20,7 @@ namespace ProjetoLP2
         private string dtIni;
         private string dtFim;
         private string part;
+        private connection conex = new connection();
 
         public criarTorneioControl()
         {
@@ -59,10 +60,19 @@ namespace ProjetoLP2
             for (int i = 1; i <= diasDoMes; i++)
             {
                 diaCombo.Items.Add(i);
-                diaCombo2.Items.Add(i);
             }
                 
 
+        }
+        private void DiDiDia2()
+        {
+            int diasDoMes = System.DateTime.DaysInMonth(ano, mes);
+            diaCombo2.Items.Clear();
+
+            for (int i = 1; i <= diasDoMes; i++)
+            {
+                diaCombo2.Items.Add(i);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,14 +106,14 @@ namespace ProjetoLP2
 
         private void mesCombo2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            mes = Convert.ToInt32(mesCombo.SelectedItem);
             diaCombo2.Enabled = true;
+            DiDiDia2();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection();
-
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root;";
+           
             
         try
             {
@@ -115,8 +125,7 @@ namespace ProjetoLP2
                     part = radio16.Text;
                 else if (radio32.Checked)
                     part = radio32.Text;
-                if (conn.State != System.Data.ConnectionState.Open)
-                    conn.Open();
+                conex.conectar();
 
                 string sql = "INSERT INTO TORNEIO(nome_torneio, data_inicio, data_termino, participante) VALUES('" +
                     txtNome.Text + "','" +
@@ -124,10 +133,11 @@ namespace ProjetoLP2
                     dtFim + "'," +
                     part + ")";
 
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-          
+                MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
                 cmd.ExecuteNonQuery();
+                this.Visible = false;
+                addVariosPartControl teste = new addVariosPartControl();
+                teste.getQtdPart(Convert.ToInt32(part));
             }
             catch (Exception ex)
             {
@@ -135,10 +145,7 @@ namespace ProjetoLP2
             }
             finally
             {
-                this.Visible = false;
-                addVariosPartControl teste = new addVariosPartControl();
-                teste.getQtdPart(Convert.ToInt32(part));
-                conn.Close();
+                conex.conn.Close();
             }
         }
 

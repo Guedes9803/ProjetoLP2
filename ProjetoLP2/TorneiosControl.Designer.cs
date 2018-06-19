@@ -130,6 +130,7 @@
             this.criarTorneioControl1.Name = "criarTorneioControl1";
             this.criarTorneioControl1.Size = new System.Drawing.Size(864, 373);
             this.criarTorneioControl1.TabIndex = 9;
+            this.criarTorneioControl1.Load += new System.EventHandler(this.criarTorneioControl1_Load_1);
             // 
             // addVariosPartControl1
             // 

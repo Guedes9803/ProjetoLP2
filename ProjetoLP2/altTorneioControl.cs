@@ -18,6 +18,7 @@ namespace ProjetoLP2
         private string dt_Inicio;
         private string dt_final;
         private string participantes;
+        private connection conex = new connection();
 
         public altTorneioControl()
         {
@@ -45,11 +46,10 @@ namespace ProjetoLP2
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root;";
+
             try
             {
-                
+                conex.conectar();
                 string sql = "UPDATE TORNEIO SET data_inicio = '"
                     + this.txtIni.Text + "', data_termino = '"
                     + this.txtTerm.Text + "', nome_torneio = '" 
@@ -57,10 +57,10 @@ namespace ProjetoLP2
                     + this.txtQtd.Text +
                     "' where id_torneio ='" + this.lblTeste.Text + "';";
 
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
 
                 MySqlDataReader dr;
-                conn.Open();                            
+                                          
                 dr = cmd.ExecuteReader();
                 this.Visible = false;
             }
@@ -70,7 +70,7 @@ namespace ProjetoLP2
             }
             finally
             {
-                conn.Close();
+                conex.conn.Close();
             }
             
         }

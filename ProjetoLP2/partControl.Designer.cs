@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.btnCriarPart = new System.Windows.Forms.Button();
+            this.dtTeste = new System.Windows.Forms.DataGridView();
             this.addPartControl1 = new ProjetoLP2.addPartControl();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTeste)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCriarPart
@@ -47,13 +49,22 @@
             this.btnCriarPart.UseVisualStyleBackColor = false;
             this.btnCriarPart.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dtTeste
+            // 
+            this.dtTeste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtTeste.Location = new System.Drawing.Point(40, 56);
+            this.dtTeste.Name = "dtTeste";
+            this.dtTeste.Size = new System.Drawing.Size(892, 317);
+            this.dtTeste.TabIndex = 2;
+            // 
             // addPartControl1
             // 
-            this.addPartControl1.Location = new System.Drawing.Point(361, 108);
+            this.addPartControl1.Location = new System.Drawing.Point(343, 102);
             this.addPartControl1.Name = "addPartControl1";
             this.addPartControl1.Size = new System.Drawing.Size(297, 223);
             this.addPartControl1.TabIndex = 1;
             this.addPartControl1.Load += new System.EventHandler(this.addPartControl1_Load);
+            this.addPartControl1.VisibleChanged += new System.EventHandler(this.addPartControl1_VisibleChanged);
             // 
             // partControl
             // 
@@ -61,9 +72,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.addPartControl1);
             this.Controls.Add(this.btnCriarPart);
+            this.Controls.Add(this.dtTeste);
             this.Name = "partControl";
             this.Size = new System.Drawing.Size(984, 513);
             this.Load += new System.EventHandler(this.partControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtTeste)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,5 +85,6 @@
 
         private System.Windows.Forms.Button btnCriarPart;
         private addPartControl addPartControl1;
+        private System.Windows.Forms.DataGridView dtTeste;
     }
 }

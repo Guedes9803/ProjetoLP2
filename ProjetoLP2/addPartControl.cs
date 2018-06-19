@@ -13,6 +13,7 @@ namespace ProjetoLP2
 {
     public partial class addPartControl : UserControl
     {
+        private connection conex = new connection();
         public addPartControl()
         {
             InitializeComponent();
@@ -20,23 +21,19 @@ namespace ProjetoLP2
 
         private void btnConf_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection();
-
-            conn.ConnectionString = "Server=localhost; Database=birb; Uid=root;";
-
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
+            conex.conectar();
 
             string sql = "INSERT INTO participant(nome, personagem) VALUES('" +
                 txtNome.Text + "','" +
                 txtPers.Text + "')";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
 
             try
             {
                 cmd.ExecuteNonQuery();
-                label5.Text = "Usuario Criado com sucesso!";
+                this.Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -44,7 +41,7 @@ namespace ProjetoLP2
             }
             finally
             {
-                conn.Close();
+                conex.conn.Close();
             }
         }
 
