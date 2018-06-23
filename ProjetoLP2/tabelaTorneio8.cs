@@ -14,7 +14,7 @@ namespace ProjetoLP2
     public partial class tabelaTorneio8 : Form
     {
         private string ID;
-
+        private connection conex = new connection();
         public tabelaTorneio8(string id)
         {
             ID = id;
@@ -35,23 +35,22 @@ namespace ProjetoLP2
             try
             {
                 Label[] top8 = { lbl8Top1, lbl8Top2, lbl8Top3, lbl8Top4, lbl8Top5, lbl8Top6, lbl8Top7, lbl8Top8 };
-                MySqlConnection conn = new MySqlConnection();
-                
+                conex.conectar();
 
-                conn.ConnectionString = "Server=localhost; Database=birb; Uid=root;";
-
-                if (conn.State != System.Data.ConnectionState.Open)
-                    conn.Open();
-
-                MySqlDataAdapter da = new MySqlDataAdapter("select nome from participant where id_part in(select id_part from part_torn where id_torneio ='" +  ID + "')", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter("select nome from participant where id_part in(select id_part from part_torn where id_torneio ='" +  ID + "')", conex.conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 label1.Text = Convert.ToString(dt.Rows[0][0]);
                 string[] nome = new string[dt.Rows.Count];
                 for (int i = 0; i < top8.Count(); i++)
                 {
-                    nome[i] = Convert.ToString(dt.Rows[i]);
-                    top8[i].Text = Convert.ToString(dt.Rows[i][0]);
+                    nome[i] = Convert.ToString(dt.Rows[i][0]);
+                   
+                }
+                MixArray(nome);
+                for(int i= 0;i < top8.Count(); i++)
+                {
+                    top8[i].Text = nome[i];
                 }
             }
             catch (Exception ex)
@@ -60,6 +59,21 @@ namespace ProjetoLP2
                 throw;
             }
            
+        }
+        public static void MixArray(string[] array)
+        {
+            int index;
+            string temp;
+            Random rand = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                index = rand.Next(array.Length);
+
+                temp = array[i];
+                array[i] = array[index];
+                array[index] = temp;
+            }
         }
 
         private void label18_Click(object sender, EventArgs e)

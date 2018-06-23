@@ -88,11 +88,18 @@
     <Compile Include="HomeControl.Designer.cs">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBoxManager.cs" />
     <Compile Include="partControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="partControl.Designer.cs">
       <DependentUpon>partControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartInfoControl.Designer.cs">
+      <DependentUpon>PartInfoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +108,12 @@
     </Compile>
     <Compile Include="tabelaTorneio8.Designer.cs">
       <DependentUpon>tabelaTorneio8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TorneioInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TorneioInfoControl.Designer.cs">
+      <DependentUpon>TorneioInfoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="TorneiosControl.cs">
       <SubType>UserControl</SubType>
@@ -129,6 +142,9 @@
     <EmbeddedResource Include="partControl.resx">
       <DependentUpon>partControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartInfoControl.resx">
+      <DependentUpon>PartInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -141,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="tabelaTorneio8.resx">
       <DependentUpon>tabelaTorneio8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TorneioInfoControl.resx">
+      <DependentUpon>TorneioInfoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TorneiosControl.resx">
       <DependentUpon>TorneiosControl.cs</DependentUpon>

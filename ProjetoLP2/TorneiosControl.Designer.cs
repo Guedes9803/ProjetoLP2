@@ -32,12 +32,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dtTeste = new System.Windows.Forms.DataGridView();
             this.lblTeste = new System.Windows.Forms.Label();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnTab = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.altTorneioControl1 = new ProjetoLP2.altTorneioControl();
+            this.btnVerInfo = new System.Windows.Forms.Button();
+            this.torneioInfoControl1 = new ProjetoLP2.TorneioInfoControl();
             this.criarTorneioControl1 = new ProjetoLP2.criarTorneioControl();
             this.addVariosPartControl1 = new ProjetoLP2.addVariosPartControl();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtTeste)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
             this.button1.Location = new System.Drawing.Point(160, 403);
             this.button1.Name = "button1";
@@ -59,9 +59,9 @@
             // dtTeste
             // 
             this.dtTeste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTeste.Location = new System.Drawing.Point(71, 36);
+            this.dtTeste.Location = new System.Drawing.Point(65, 24);
             this.dtTeste.Name = "dtTeste";
-            this.dtTeste.Size = new System.Drawing.Size(858, 361);
+            this.dtTeste.Size = new System.Drawing.Size(864, 373);
             this.dtTeste.TabIndex = 2;
             this.dtTeste.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtTeste_CellClick);
             this.dtTeste.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -76,35 +76,43 @@
             this.lblTeste.TabIndex = 4;
             this.lblTeste.Text = "label1";
             // 
-            // btnAtualizar
+            // btnVerInfo
             // 
-            this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnAtualizar.FlatAppearance.BorderSize = 0;
-            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizar.Location = new System.Drawing.Point(396, 403);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(192, 85);
-            this.btnAtualizar.TabIndex = 5;
-            this.btnAtualizar.Text = "Alterar Informações";
-            this.btnAtualizar.UseVisualStyleBackColor = false;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            this.btnVerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnVerInfo.FlatAppearance.BorderSize = 0;
+            this.btnVerInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerInfo.ForeColor = System.Drawing.Color.White;
+            this.btnVerInfo.Location = new System.Drawing.Point(396, 403);
+            this.btnVerInfo.Name = "btnVerInfo";
+            this.btnVerInfo.Size = new System.Drawing.Size(192, 85);
+            this.btnVerInfo.TabIndex = 5;
+            this.btnVerInfo.Text = "Ver Informações";
+            this.btnVerInfo.UseVisualStyleBackColor = false;
+            this.btnVerInfo.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
-            // btnTab
+            // torneioInfoControl1
             // 
-            this.btnTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnTab.FlatAppearance.BorderSize = 0;
-            this.btnTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTab.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTab.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnTab.Location = new System.Drawing.Point(616, 403);
-            this.btnTab.Name = "btnTab";
-            this.btnTab.Size = new System.Drawing.Size(192, 85);
-            this.btnTab.TabIndex = 5;
-            this.btnTab.Text = "Gerar Tabela";
-            this.btnTab.UseVisualStyleBackColor = false;
-            this.btnTab.Click += new System.EventHandler(this.btnGerar_Click);
+            this.torneioInfoControl1.Location = new System.Drawing.Point(71, 10);
+            this.torneioInfoControl1.Name = "torneioInfoControl1";
+            this.torneioInfoControl1.Size = new System.Drawing.Size(864, 387);
+            this.torneioInfoControl1.TabIndex = 11;
+            // 
+            // criarTorneioControl1
+            // 
+            this.criarTorneioControl1.Location = new System.Drawing.Point(65, 24);
+            this.criarTorneioControl1.Name = "criarTorneioControl1";
+            this.criarTorneioControl1.Size = new System.Drawing.Size(864, 373);
+            this.criarTorneioControl1.TabIndex = 9;
+            this.criarTorneioControl1.Load += new System.EventHandler(this.criarTorneioControl1_Load_1);
+            this.criarTorneioControl1.VisibleChanged += new System.EventHandler(this.criarTorneioControl1_VisibleChanged);
+            // 
+            // addVariosPartControl1
+            // 
+            this.addVariosPartControl1.Location = new System.Drawing.Point(65, 24);
+            this.addVariosPartControl1.Name = "addVariosPartControl1";
+            this.addVariosPartControl1.Size = new System.Drawing.Size(864, 373);
+            this.addVariosPartControl1.TabIndex = 10;
             // 
             // button2
             // 
@@ -116,42 +124,34 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // altTorneioControl1
+            // btnDeletar
             // 
-            this.altTorneioControl1.Location = new System.Drawing.Point(71, 36);
-            this.altTorneioControl1.Name = "altTorneioControl1";
-            this.altTorneioControl1.Size = new System.Drawing.Size(858, 361);
-            this.altTorneioControl1.TabIndex = 6;
-            this.altTorneioControl1.Load += new System.EventHandler(this.altTorneioControl1_Load);
-            // 
-            // criarTorneioControl1
-            // 
-            this.criarTorneioControl1.Location = new System.Drawing.Point(65, 24);
-            this.criarTorneioControl1.Name = "criarTorneioControl1";
-            this.criarTorneioControl1.Size = new System.Drawing.Size(864, 373);
-            this.criarTorneioControl1.TabIndex = 9;
-            this.criarTorneioControl1.Load += new System.EventHandler(this.criarTorneioControl1_Load_1);
-            // 
-            // addVariosPartControl1
-            // 
-            this.addVariosPartControl1.Location = new System.Drawing.Point(65, 24);
-            this.addVariosPartControl1.Name = "addVariosPartControl1";
-            this.addVariosPartControl1.Size = new System.Drawing.Size(864, 373);
-            this.addVariosPartControl1.TabIndex = 10;
+            this.btnDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnDeletar.FlatAppearance.BorderSize = 0;
+            this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.ForeColor = System.Drawing.Color.White;
+            this.btnDeletar.Location = new System.Drawing.Point(644, 403);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(192, 85);
+            this.btnDeletar.TabIndex = 5;
+            this.btnDeletar.Text = "Deletar Torneio";
+            this.btnDeletar.UseVisualStyleBackColor = false;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDelet_Click);
             // 
             // TorneiosControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnTab);
-            this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnVerInfo);
             this.Controls.Add(this.lblTeste);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtTeste);
             this.Controls.Add(this.criarTorneioControl1);
             this.Controls.Add(this.addVariosPartControl1);
-            this.Controls.Add(this.altTorneioControl1);
-            this.Controls.Add(this.dtTeste);
+            this.Controls.Add(this.torneioInfoControl1);
             this.Name = "TorneiosControl";
             this.Size = new System.Drawing.Size(984, 513);
             this.Load += new System.EventHandler(this.TorneiosControl_Load);
@@ -166,10 +166,10 @@
         private System.Windows.Forms.DataGridView dtTeste;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblTeste;
-        private System.Windows.Forms.Button btnAtualizar;
-        private altTorneioControl altTorneioControl1;
-        private System.Windows.Forms.Button btnTab;
+        private System.Windows.Forms.Button btnVerInfo;
         private criarTorneioControl criarTorneioControl1;
         private addVariosPartControl addVariosPartControl1;
+        private TorneioInfoControl torneioInfoControl1;
+        private System.Windows.Forms.Button btnDeletar;
     }
 }

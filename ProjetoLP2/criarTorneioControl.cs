@@ -15,6 +15,7 @@ namespace ProjetoLP2
     public partial class criarTorneioControl : UserControl
     {
         private int dia;
+        private bool statusText = false;
         private int mes;
         private int ano;
         private string dtIni;
@@ -45,7 +46,7 @@ namespace ProjetoLP2
                 anoCombo.Items.Add(i);
                 anoCombo2.Items.Add(i);
             }
-                
+            anoCombo.IntegralHeight = false;
             mesCombo.Enabled = false;
             diaCombo.Enabled = false;
             mesCombo2.Enabled = false;
@@ -113,40 +114,7 @@ namespace ProjetoLP2
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-           
-            
-        try
-            {
-                dtIni = Convert.ToString(anoCombo.SelectedItem) + '-' + Convert.ToString(mesCombo.SelectedItem) + '-' + Convert.ToString(diaCombo.SelectedItem);
-                dtFim = Convert.ToString(anoCombo2.SelectedItem) + '-' + Convert.ToString(mesCombo2.SelectedItem) + '-' + Convert.ToString(diaCombo2.SelectedItem);
-                if (radio8.Checked)
-                    part = radio8.Text;
-                else if (radio16.Checked)
-                    part = radio16.Text;
-                else if (radio32.Checked)
-                    part = radio32.Text;
-                conex.conectar();
-
-                string sql = "INSERT INTO TORNEIO(nome_torneio, data_inicio, data_termino, participante) VALUES('" +
-                    txtNome.Text + "','" +
-                    dtIni + "','" +
-                    dtFim + "'," +
-                    part + ")";
-
-                MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
-                cmd.ExecuteNonQuery();
-                this.Visible = false;
-                addVariosPartControl teste = new addVariosPartControl();
-                teste.getQtdPart(Convert.ToInt32(part));
-            }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-                conex.conn.Close();
-            }
+            CheckData();
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -159,6 +127,7 @@ namespace ProjetoLP2
             {
                 txtNome.Text = "";
                 txtNome.ForeColor = Color.Black;
+                statusText = true;
             }
         }
 
@@ -168,9 +137,86 @@ namespace ProjetoLP2
             {
                 txtNome.Text = "Nome do Torneio";
                 txtNome.ForeColor = Color.Silver;
+                statusText = false;
             }
         }
+        private void CheckData()
+        {
+            if(statusText)
+            {
+                if(diaCombo2.SelectedIndex > -1)
+                {
+                    DateTime dtInicial = new DateTime(Convert.ToInt32(anoCombo.SelectedItem), Convert.ToInt32(mesCombo.SelectedItem), Convert.ToInt32(diaCombo.SelectedItem), 0, 0, 0);
+                    DateTime dtFinal = new DateTime(Convert.ToInt32(anoCombo2.SelectedItem), Convert.ToInt32(mesCombo2.SelectedItem), Convert.ToInt32(diaCombo2.SelectedItem), 0, 0, 0);
+                    if (dtInicial.Date < dtFinal.Date)
+                    {
+                        if(radio8.Checked || radio16.Checked || radio32.Checked)
+                        {
+                            CadastrarTorneio();
+                        }
+                        else
+                        {
+                            label1.Text = "Por favor escolha a quantidade de participantes!";
+                        }
+                    }
+                    else
+                    {
+                        label1.Text = "Data Invalida";
+                    }
+                }
+                else
+                {
+                    label1.Text = "Por favor insira data de inicio e termino do torneio valida!";
+                }
+                
+            }
+            else
+            {
+                label1.Text = "Insira o nome do Torneio";
+            }
+            
+            
+        }
+        private void CadastrarTorneio()
+        {
+            try
+            {
+                dtIni = Convert.ToString(anoCombo.SelectedItem) + '-' + Convert.ToString(mesCombo.SelectedItem) + '-' + Convert.ToString(diaCombo.SelectedItem);
+                dtFim = Convert.ToString(anoCombo2.SelectedItem) + '-' + Convert.ToString(mesCombo2.SelectedItem) + '-' + Convert.ToString(diaCombo2.SelectedItem);
+                if (radio8.Checked)
+                    part = radio8.Text;
+                else if (radio16.Checked)
+                    part = radio16.Text;
+                else if (radio32.Checked)
+                    part = radio32.Text;
+                conex.conectar();
 
+                string sql = "INSERT INTO TORNEIO(nome, dt_inicio, dt_fim, qtd_participantes,qtd_vagas,premio,id_vencedor) VALUES('" +
+                    txtNome.Text + "','" +
+                    dtIni + "','" +
+                    dtFim + "','" +
+                    part + "','" +
+                    part + "','" +
+                    txtPremio.Text + "'," +
+                    "NULL)";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
+                cmd.ExecuteNonQuery();
+                this.Visible = false;
+                //addVariosPartControl teste = new addVariosPartControl();
+                //teste.getQtdPart(Convert.ToInt32(part));
+                TorneiosControl teste2 = new TorneiosControl();
+                teste2.PreencherTabela();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                conex.conn.Close();
+            }
+        }
 
     }
 }

@@ -19,6 +19,7 @@ namespace ProjetoLP2
             InitializeComponent();
             addPartControl1.Visible = false;
             preencherTabela();
+            dtTeste.AllowUserToAddRows = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,13 +36,13 @@ namespace ProjetoLP2
         private void preencherTabela()
         {
             conex.conectar();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM participant", conex.conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM jogador", conex.conn);
             DataTable dt = new DataTable();
             try
             {
                 da.Fill(dt);
                 dtTeste.DataSource = dt;
-                this.dtTeste.Columns["id_part"].Visible = false;
+                this.dtTeste.Columns["jogador_id"].Visible = false;
             }
             catch (Exception)
             {
@@ -64,6 +65,7 @@ namespace ProjetoLP2
             if(this.Visible && !dtTeste.Visible)
             {
                 dtTeste.Visible = true;
+                preencherTabela();
             }
         }
     }

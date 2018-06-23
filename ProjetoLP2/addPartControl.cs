@@ -17,6 +17,7 @@ namespace ProjetoLP2
         public addPartControl()
         {
             InitializeComponent();
+            
         }
 
         private void btnConf_Click(object sender, EventArgs e)
@@ -51,6 +52,16 @@ namespace ProjetoLP2
         }
 
         private void addPartControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTAst_Popup(object sender, PopupEventArgs e)
         {
 
         }

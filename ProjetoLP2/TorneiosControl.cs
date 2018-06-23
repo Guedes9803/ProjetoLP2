@@ -25,11 +25,12 @@ namespace ProjetoLP2
         public TorneiosControl()
         {
             InitializeComponent();
+            dtTeste.AllowUserToAddRows = false;
             PreencherTabela();
 
         }
 
-        private void PreencherTabela()
+        public void PreencherTabela()
         {
             conex.conectar();
             MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM torneio", conex.conn);
@@ -38,7 +39,7 @@ namespace ProjetoLP2
             {
                 da.Fill(dt);
                 dtTeste.DataSource = dt;
-                this.dtTeste.Columns["id_torneio"].Visible = false;
+                this.dtTeste.Columns["torneio_id"].Visible = false;
             }
             catch (Exception)
             {
@@ -82,19 +83,12 @@ namespace ProjetoLP2
             dt_term = dtTeste.CurrentRow.Cells[2].Value.ToString();
             part =  dtTeste.CurrentRow.Cells[3].Value.ToString();
             nome = dtTeste.CurrentRow.Cells[4].Value.ToString();
+            lblTeste.Text = id;
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            altTorneioControl alterar = new altTorneioControl();
-            if(id != null)
-            {
-                altTorneioControl1.Carrega(nome, dt_ini, dt_term, part, id);
-                altTorneioControl1.Visible = true;
-                altTorneioControl1.preencheCampos();
-
-            }
-                
+           
         }
 
         private void altTorneioControl1_Load(object sender, EventArgs e)
@@ -104,7 +98,7 @@ namespace ProjetoLP2
         private void TorneiosControl_Load(object sender, EventArgs e)
         {
             dtTeste.Visible = true;
-            altTorneioControl1.Visible = false;
+            
             criarTorneioControl1.Visible = false;
             addVariosPartControl1.Visible = false;
             
@@ -124,6 +118,51 @@ namespace ProjetoLP2
 
         private void criarTorneioControl1_Load_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void criarTorneioControl1_VisibleChanged(object sender, EventArgs e)
+        {
+            PreencherTabela();
+        }
+
+        private void btnDelet_Click(object sender, EventArgs e)
+        {
+            MessageBoxManager.Yes = "Sim";
+            MessageBoxManager.No = "Não";
+            MessageBoxManager.Register();
+            var confirmResult = MessageBox.Show("Deletar Campeonato",
+                                     "Você tem certeza que quer deletar o campeonato?!?",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+
+
+
+                try
+                {
+                    conex.conectar();
+                    string Query = "delete from torneio where torneio_id='" + id + "';";
+                    MySqlCommand cmd = new MySqlCommand(Query, conex.conn);
+                    MySqlDataReader rdr;
+                    rdr = cmd.ExecuteReader();
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    conex.conn.Close();
+                    PreencherTabela();
+                }
+            }
+            else
+            {
+
+            }
 
         }
     }
