@@ -21,19 +21,25 @@ namespace ProjetoLP2
         private connection conex = new connection();
 
 
-
         public TorneiosControl()
         {
             InitializeComponent();
             dtTeste.AllowUserToAddRows = false;
-            PreencherTabela();
+            dtTeste.ReadOnly = true;
+            dtTeste.RowHeadersVisible = false;
+            dtTeste.BackgroundColor = Color.White;
 
+            PreencherTabela();
+            criarTorneioControl1.Visible = false;
+            torneioInfoControl1.Visible = false;
         }
 
         public void PreencherTabela()
         {
             conex.conectar();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM torneio", conex.conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT torneio_id,t.nome as 'Torneio',dt_inicio as 'Data Inicio',dt_fim as 'Data Fim'" +
+                ",qtd_participantes as 'Numero de Participantes', qtd_vagas as 'Vagas Sobrando', premio as 'Prêmio', concat(j.nome, ', ',j.sobrenome)" +
+                " as 'Campeão' FROM torneio t left join jogador j on j.jogador_id = t.id_vencedor", conex.conn);
             DataTable dt = new DataTable();
             try
             {
@@ -48,16 +54,15 @@ namespace ProjetoLP2
             }
             finally
             {
+                UpdateFont();
                 conex.conn.Close();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            addVariosPartControl1.BringToFront();
+        { 
             criarTorneioControl1.BringToFront();
             criarTorneioControl1.Visible = true;
-            addVariosPartControl1.Visible = true;
             criarTorneioControl1.CoCoCombo();
         }
 
@@ -73,7 +78,7 @@ namespace ProjetoLP2
 
         private void dtTeste_DoubleClick(object sender, EventArgs e)
         {
-            lblTeste.Text = dt_ini;
+            //lblTeste.Text = dt_ini;
         }
 
         private void dtTeste_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -83,12 +88,14 @@ namespace ProjetoLP2
             dt_term = dtTeste.CurrentRow.Cells[2].Value.ToString();
             part =  dtTeste.CurrentRow.Cells[3].Value.ToString();
             nome = dtTeste.CurrentRow.Cells[4].Value.ToString();
-            lblTeste.Text = id;
+            //lblTeste.Text = id;
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-           
+            torneioInfoControl1.Carrega(id);
+            torneioInfoControl1.BringToFront();
+            torneioInfoControl1.Visible = true;
         }
 
         private void altTorneioControl1_Load(object sender, EventArgs e)
@@ -100,7 +107,7 @@ namespace ProjetoLP2
             dtTeste.Visible = true;
             
             criarTorneioControl1.Visible = false;
-            addVariosPartControl1.Visible = false;
+            
             
             
         }
@@ -112,8 +119,8 @@ namespace ProjetoLP2
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
-            tabelaTorneio8 janela = new tabelaTorneio8(id);
-            janela.Show();
+            //tabelaTorneio8 janela = new tabelaTorneio8(id);
+            //janela.Show();
         }
 
         private void criarTorneioControl1_Load_1(object sender, EventArgs e)
@@ -164,6 +171,16 @@ namespace ProjetoLP2
 
             }
 
+        }
+
+
+        private void UpdateFont()
+        {
+            //Change cell font
+            foreach (DataGridViewColumn c in dtTeste.Columns)
+            {
+                c.DefaultCellStyle.Font = new Font("Roboto", 12F, GraphicsUnit.Pixel);
+            }
         }
     }
 }

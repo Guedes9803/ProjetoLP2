@@ -38,20 +38,21 @@
             this.btnRemPart = new System.Windows.Forms.Button();
             this.btnTabela = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.cbAno = new System.Windows.Forms.ComboBox();
+            this.cbMes = new System.Windows.Forms.ComboBox();
+            this.cbDia = new System.Windows.Forms.ComboBox();
+            this.cbAno2 = new System.Windows.Forms.ComboBox();
+            this.cbMes2 = new System.Windows.Forms.ComboBox();
+            this.cbDia2 = new System.Windows.Forms.ComboBox();
+            this.dgPart = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.radio32 = new System.Windows.Forms.RadioButton();
+            this.radio16 = new System.Windows.Forms.RadioButton();
+            this.radio8 = new System.Windows.Forms.RadioButton();
+            this.lblRest = new System.Windows.Forms.Label();
+            this.addVariosPartControl1 = new ProjetoLP2.addVariosPartControl();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPart)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,8 +113,9 @@
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(93, 45);
             this.btnAlterar.TabIndex = 1;
-            this.btnAlterar.Text = "Alterar Informações";
+            this.btnAlterar.Text = "Salvar Alterações";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnAddPart
             // 
@@ -124,6 +126,7 @@
             this.btnAddPart.TabIndex = 2;
             this.btnAddPart.Text = "Adicionar Participante";
             this.btnAddPart.UseVisualStyleBackColor = true;
+            this.btnAddPart.Click += new System.EventHandler(this.btnAddPart_Click);
             // 
             // btnRemPart
             // 
@@ -134,6 +137,7 @@
             this.btnRemPart.TabIndex = 2;
             this.btnRemPart.Text = "Remover Participante";
             this.btnRemPart.UseVisualStyleBackColor = true;
+            this.btnRemPart.Click += new System.EventHandler(this.btnRemPart_Click);
             // 
             // btnTabela
             // 
@@ -144,6 +148,7 @@
             this.btnTabela.TabIndex = 2;
             this.btnTabela.Text = "Ver Tabela Campeonato";
             this.btnTabela.UseVisualStyleBackColor = true;
+            this.btnTabela.Click += new System.EventHandler(this.btnTabela_Click);
             // 
             // button1
             // 
@@ -154,146 +159,170 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(211, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 22);
-            this.textBox1.TabIndex = 3;
+            this.txtNome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNome.Location = new System.Drawing.Point(211, 83);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(205, 22);
+            this.txtNome.TabIndex = 3;
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
-            // textBox2
+            // cbAno
             // 
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.Location = new System.Drawing.Point(211, 262);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 3;
+            this.cbAno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAno.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbAno.FormattingEnabled = true;
+            this.cbAno.Location = new System.Drawing.Point(211, 128);
+            this.cbAno.Name = "cbAno";
+            this.cbAno.Size = new System.Drawing.Size(54, 22);
+            this.cbAno.TabIndex = 4;
+            this.cbAno.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cbMes
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(211, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(54, 22);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbMes.FormattingEnabled = true;
+            this.cbMes.Location = new System.Drawing.Point(288, 128);
+            this.cbMes.Name = "cbMes";
+            this.cbMes.Size = new System.Drawing.Size(54, 22);
+            this.cbMes.TabIndex = 4;
             // 
-            // comboBox2
+            // cbDia
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(288, 128);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(54, 22);
-            this.comboBox2.TabIndex = 4;
+            this.cbDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDia.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbDia.FormattingEnabled = true;
+            this.cbDia.Location = new System.Drawing.Point(362, 128);
+            this.cbDia.Name = "cbDia";
+            this.cbDia.Size = new System.Drawing.Size(54, 22);
+            this.cbDia.TabIndex = 4;
             // 
-            // comboBox3
+            // cbAno2
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(362, 128);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(54, 22);
-            this.comboBox3.TabIndex = 4;
+            this.cbAno2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAno2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbAno2.FormattingEnabled = true;
+            this.cbAno2.Location = new System.Drawing.Point(211, 170);
+            this.cbAno2.Name = "cbAno2";
+            this.cbAno2.Size = new System.Drawing.Size(54, 22);
+            this.cbAno2.TabIndex = 4;
             // 
-            // comboBox4
+            // cbMes2
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(211, 170);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(54, 22);
-            this.comboBox4.TabIndex = 4;
+            this.cbMes2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMes2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbMes2.FormattingEnabled = true;
+            this.cbMes2.Location = new System.Drawing.Point(288, 170);
+            this.cbMes2.Name = "cbMes2";
+            this.cbMes2.Size = new System.Drawing.Size(54, 22);
+            this.cbMes2.TabIndex = 4;
             // 
-            // comboBox5
+            // cbDia2
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(288, 170);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(54, 22);
-            this.comboBox5.TabIndex = 4;
+            this.cbDia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDia2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbDia2.FormattingEnabled = true;
+            this.cbDia2.Location = new System.Drawing.Point(362, 170);
+            this.cbDia2.Name = "cbDia2";
+            this.cbDia2.Size = new System.Drawing.Size(54, 22);
+            this.cbDia2.TabIndex = 4;
             // 
-            // comboBox6
+            // dgPart
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(362, 170);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(54, 22);
-            this.comboBox6.TabIndex = 4;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(553, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 220);
-            this.dataGridView1.TabIndex = 5;
+            this.dgPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPart.Location = new System.Drawing.Point(553, 83);
+            this.dgPart.Name = "dgPart";
+            this.dgPart.Size = new System.Drawing.Size(240, 220);
+            this.dgPart.TabIndex = 5;
+            this.dgPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPart_CellClick);
+            this.dgPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPart_CellContentClick);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radio32);
+            this.panel1.Controls.Add(this.radio16);
+            this.panel1.Controls.Add(this.radio8);
             this.panel1.Location = new System.Drawing.Point(211, 211);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 34);
             this.panel1.TabIndex = 6;
             // 
-            // radioButton1
+            // radio32
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.radioButton1.Location = new System.Drawing.Point(7, 9);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(32, 18);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "8";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radio32.AutoSize = true;
+            this.radio32.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.radio32.Location = new System.Drawing.Point(151, 9);
+            this.radio32.Name = "radio32";
+            this.radio32.Size = new System.Drawing.Size(39, 18);
+            this.radio32.TabIndex = 0;
+            this.radio32.TabStop = true;
+            this.radio32.Text = "32";
+            this.radio32.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radio16
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.radioButton2.Location = new System.Drawing.Point(77, 9);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 18);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "16";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radio16.AutoSize = true;
+            this.radio16.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.radio16.Location = new System.Drawing.Point(77, 9);
+            this.radio16.Name = "radio16";
+            this.radio16.Size = new System.Drawing.Size(39, 18);
+            this.radio16.TabIndex = 0;
+            this.radio16.TabStop = true;
+            this.radio16.Text = "16";
+            this.radio16.UseVisualStyleBackColor = true;
+            this.radio16.Click += new System.EventHandler(this.radio16_Click);
             // 
-            // radioButton3
+            // radio8
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.radioButton3.Location = new System.Drawing.Point(151, 9);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 18);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "32";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radio8.AutoSize = true;
+            this.radio8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.radio8.Location = new System.Drawing.Point(7, 9);
+            this.radio8.Name = "radio8";
+            this.radio8.Size = new System.Drawing.Size(32, 18);
+            this.radio8.TabIndex = 0;
+            this.radio8.TabStop = true;
+            this.radio8.Text = "8";
+            this.radio8.UseVisualStyleBackColor = true;
+            this.radio8.CheckedChanged += new System.EventHandler(this.radio8_CheckedChanged);
+            this.radio8.Click += new System.EventHandler(this.radio8_Click);
+            // 
+            // lblRest
+            // 
+            this.lblRest.AutoSize = true;
+            this.lblRest.Location = new System.Drawing.Point(211, 270);
+            this.lblRest.Name = "lblRest";
+            this.lblRest.Size = new System.Drawing.Size(35, 13);
+            this.lblRest.TabIndex = 7;
+            this.lblRest.Text = "label5";
+            // 
+            // addVariosPartControl1
+            // 
+            this.addVariosPartControl1.Location = new System.Drawing.Point(0, 0);
+            this.addVariosPartControl1.Name = "addVariosPartControl1";
+            this.addVariosPartControl1.Size = new System.Drawing.Size(864, 447);
+            this.addVariosPartControl1.TabIndex = 8;
+            this.addVariosPartControl1.Load += new System.EventHandler(this.addVariosPartControl1_Load);
+            this.addVariosPartControl1.VisibleChanged += new System.EventHandler(this.addVariosPartControl1_VisibleChanged);
             // 
             // TorneioInfoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblRest);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgPart);
+            this.Controls.Add(this.cbDia2);
+            this.Controls.Add(this.cbDia);
+            this.Controls.Add(this.cbMes2);
+            this.Controls.Add(this.cbMes);
+            this.Controls.Add(this.cbAno2);
+            this.Controls.Add(this.cbAno);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnTabela);
             this.Controls.Add(this.btnRemPart);
             this.Controls.Add(this.btnAddPart);
@@ -304,10 +333,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.addVariosPartControl1);
             this.Name = "TorneioInfoControl";
-            this.Size = new System.Drawing.Size(864, 392);
+            this.Size = new System.Drawing.Size(863, 447);
             this.Load += new System.EventHandler(this.TorneioInfoControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -327,18 +357,19 @@
         private System.Windows.Forms.Button btnRemPart;
         private System.Windows.Forms.Button btnTabela;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.ComboBox cbAno;
+        private System.Windows.Forms.ComboBox cbMes;
+        private System.Windows.Forms.ComboBox cbDia;
+        private System.Windows.Forms.ComboBox cbAno2;
+        private System.Windows.Forms.ComboBox cbMes2;
+        private System.Windows.Forms.ComboBox cbDia2;
+        private System.Windows.Forms.DataGridView dgPart;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radio32;
+        private System.Windows.Forms.RadioButton radio16;
+        private System.Windows.Forms.RadioButton radio8;
+        private System.Windows.Forms.Label lblRest;
+        private addVariosPartControl addVariosPartControl1;
     }
 }

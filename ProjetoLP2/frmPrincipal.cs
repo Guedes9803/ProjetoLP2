@@ -57,7 +57,9 @@ namespace ProjetoLP2
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            SideBar.Height = button4.Height;
+            SideBar.Top = button4.Top;
+            calendario1.BringToFront();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

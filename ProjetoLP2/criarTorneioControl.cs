@@ -15,6 +15,7 @@ namespace ProjetoLP2
     public partial class criarTorneioControl : UserControl
     {
         private int dia;
+        private bool OK = false;
         private bool statusText = false;
         private int mes;
         private int ano;
@@ -26,6 +27,8 @@ namespace ProjetoLP2
         public criarTorneioControl()
         {
             InitializeComponent();
+            addVariosPartControl1.Visible = false;
+            
         }
 
 
@@ -87,6 +90,7 @@ namespace ProjetoLP2
         {
             ano = Convert.ToInt32(anoCombo.SelectedItem);
             mesCombo.Enabled = true;
+
             
         }
 
@@ -115,6 +119,14 @@ namespace ProjetoLP2
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             CheckData();
+            if(OK)
+            {
+                addVariosPartControl1.getQtdPart(Convert.ToInt32(part));
+                addVariosPartControl1.BringToFront();
+                addVariosPartControl1.Visible = true;
+            }
+            
+
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -153,6 +165,7 @@ namespace ProjetoLP2
                         if(radio8.Checked || radio16.Checked || radio32.Checked)
                         {
                             CadastrarTorneio();
+                            OK = true;
                         }
                         else
                         {
@@ -190,6 +203,8 @@ namespace ProjetoLP2
                 else if (radio32.Checked)
                     part = radio32.Text;
                 conex.conectar();
+                if (String.IsNullOrEmpty(txtPremio.Text))
+                    txtPremio.Text = "Sem premiação";
 
                 string sql = "INSERT INTO TORNEIO(nome, dt_inicio, dt_fim, qtd_participantes,qtd_vagas,premio,id_vencedor) VALUES('" +
                     txtNome.Text + "','" +
@@ -202,11 +217,6 @@ namespace ProjetoLP2
 
                 MySqlCommand cmd = new MySqlCommand(sql, conex.conn);
                 cmd.ExecuteNonQuery();
-                this.Visible = false;
-                //addVariosPartControl teste = new addVariosPartControl();
-                //teste.getQtdPart(Convert.ToInt32(part));
-                TorneiosControl teste2 = new TorneiosControl();
-                teste2.PreencherTabela();
             }
             catch (Exception ex)
             {
@@ -216,6 +226,19 @@ namespace ProjetoLP2
             {
                 conex.conn.Close();
             }
+        }
+
+        private void addVariosPartControl1_VisibleChanged(object sender, EventArgs e)
+        {
+            if(addVariosPartControl1.Visible == false)
+            {
+                this.Visible = false;
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
 
     }
