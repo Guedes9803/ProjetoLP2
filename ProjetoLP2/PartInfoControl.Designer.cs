@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgTorn = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -36,23 +36,30 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtSobre = new System.Windows.Forms.TextBox();
+            this.txtApe = new System.Windows.Forms.TextBox();
             this.btnAlt = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDesf = new System.Windows.Forms.Button();
             this.btnSalva = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.cbPers = new System.Windows.Forms.ComboBox();
+            this.lblPers = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblCamp = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTorn)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgTorn
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(456, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 204);
-            this.dataGridView1.TabIndex = 0;
+            this.dgTorn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTorn.Location = new System.Drawing.Point(456, 55);
+            this.dgTorn.Name = "dgTorn";
+            this.dgTorn.Size = new System.Drawing.Size(272, 204);
+            this.dgTorn.TabIndex = 0;
+            this.dgTorn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTorn_CellClick);
+            this.dgTorn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTorn_CellContentClick);
             // 
             // btnAlterar
             // 
@@ -62,15 +69,17 @@
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "Alterar Personagem";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(612, 280);
+            this.btnRemover.Location = new System.Drawing.Point(644, 280);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(84, 45);
             this.btnRemover.TabIndex = 1;
             this.btnRemover.Text = "Remover Inscrição";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnVoltar
             // 
@@ -81,6 +90,7 @@
             this.btnVoltar.TabIndex = 2;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // lblNome
             // 
@@ -122,37 +132,32 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "CPF";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(165, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtNome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNome.Location = new System.Drawing.Point(165, 101);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.ReadOnly = true;
+            this.txtNome.Size = new System.Drawing.Size(149, 22);
+            this.txtNome.TabIndex = 4;
             // 
-            // textBox2
+            // txtSobre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.Location = new System.Drawing.Point(165, 139);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 22);
-            this.textBox2.TabIndex = 4;
+            this.txtSobre.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSobre.Location = new System.Drawing.Point(165, 139);
+            this.txtSobre.Name = "txtSobre";
+            this.txtSobre.ReadOnly = true;
+            this.txtSobre.Size = new System.Drawing.Size(149, 22);
+            this.txtSobre.TabIndex = 4;
             // 
-            // textBox3
+            // txtApe
             // 
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox3.Location = new System.Drawing.Point(165, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 22);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox4.Location = new System.Drawing.Point(165, 224);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(149, 22);
-            this.textBox4.TabIndex = 4;
+            this.txtApe.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtApe.Location = new System.Drawing.Point(165, 181);
+            this.txtApe.Name = "txtApe";
+            this.txtApe.ReadOnly = true;
+            this.txtApe.Size = new System.Drawing.Size(149, 22);
+            this.txtApe.TabIndex = 4;
             // 
             // btnAlt
             // 
@@ -162,36 +167,102 @@
             this.btnAlt.TabIndex = 5;
             this.btnAlt.Text = "Alterar Informações";
             this.btnAlt.UseVisualStyleBackColor = true;
+            this.btnAlt.Click += new System.EventHandler(this.btnAlt_Click);
             // 
-            // button1
+            // btnDesf
             // 
-            this.button1.Location = new System.Drawing.Point(36, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Desfazer Alterações";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDesf.Location = new System.Drawing.Point(165, 271);
+            this.btnDesf.Name = "btnDesf";
+            this.btnDesf.Size = new System.Drawing.Size(90, 45);
+            this.btnDesf.TabIndex = 5;
+            this.btnDesf.Text = "Desfazer Alterações";
+            this.btnDesf.UseVisualStyleBackColor = true;
+            this.btnDesf.Click += new System.EventHandler(this.btnDesf_Click);
             // 
             // btnSalva
             // 
-            this.btnSalva.Location = new System.Drawing.Point(182, 339);
+            this.btnSalva.Location = new System.Drawing.Point(33, 271);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(90, 45);
             this.btnSalva.TabIndex = 5;
-            this.btnSalva.Text = "Salavar Alterações";
+            this.btnSalva.Text = "Salvar Alterações";
             this.btnSalva.UseVisualStyleBackColor = true;
+            this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCPF.Location = new System.Drawing.Point(165, 223);
+            this.txtCPF.Mask = "000,000,000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.ReadOnly = true;
+            this.txtCPF.Size = new System.Drawing.Size(149, 22);
+            this.txtCPF.TabIndex = 6;
+            // 
+            // cbPers
+            // 
+            this.cbPers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPers.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbPers.FormattingEnabled = true;
+            this.cbPers.Location = new System.Drawing.Point(591, 142);
+            this.cbPers.Name = "cbPers";
+            this.cbPers.Size = new System.Drawing.Size(121, 22);
+            this.cbPers.TabIndex = 7;
+            // 
+            // lblPers
+            // 
+            this.lblPers.AutoSize = true;
+            this.lblPers.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblPers.Location = new System.Drawing.Point(488, 150);
+            this.lblPers.Name = "lblPers";
+            this.lblPers.Size = new System.Drawing.Size(76, 14);
+            this.lblPers.TabIndex = 8;
+            this.lblPers.Text = "Personagem";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(456, 280);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(84, 45);
+            this.btnSalvar.TabIndex = 9;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(644, 282);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 43);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblCamp
+            // 
+            this.lblCamp.AutoSize = true;
+            this.lblCamp.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblCamp.Location = new System.Drawing.Point(461, 30);
+            this.lblCamp.Name = "lblCamp";
+            this.lblCamp.Size = new System.Drawing.Size(256, 22);
+            this.lblCamp.TabIndex = 11;
+            this.lblCamp.Text = "Participações em Campeonato";
             // 
             // PartInfoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblCamp);
+            this.Controls.Add(this.lblPers);
+            this.Controls.Add(this.cbPers);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.btnSalva);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDesf);
             this.Controls.Add(this.btnAlt);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtApe);
+            this.Controls.Add(this.txtSobre);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -199,10 +270,13 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgTorn);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnCancelar);
             this.Name = "PartInfoControl";
-            this.Size = new System.Drawing.Size(735, 405);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(839, 405);
+            this.Load += new System.EventHandler(this.PartInfoControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgTorn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +284,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgTorn;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnVoltar;
@@ -218,12 +292,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtSobre;
+        private System.Windows.Forms.TextBox txtApe;
         private System.Windows.Forms.Button btnAlt;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDesf;
         private System.Windows.Forms.Button btnSalva;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.ComboBox cbPers;
+        private System.Windows.Forms.Label lblPers;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblCamp;
     }
 }

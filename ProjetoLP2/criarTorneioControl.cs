@@ -124,6 +124,10 @@ namespace ProjetoLP2
                 addVariosPartControl1.getQtdPart(Convert.ToInt32(part));
                 addVariosPartControl1.BringToFront();
                 addVariosPartControl1.Visible = true;
+                txtNome.Text = "Nome do Torneio";
+                txtNome.ForeColor = Color.Silver;
+                statusText = false;
+                txtPremio.Text = "";
             }
             
 
@@ -241,5 +245,9 @@ namespace ProjetoLP2
             this.Visible = false;
         }
 
+        private void addVariosPartControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

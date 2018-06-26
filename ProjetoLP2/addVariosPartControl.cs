@@ -415,6 +415,7 @@ namespace ProjetoLP2
             DataTable dt = new DataTable();
             try
             {
+                IDJog.Clear();
                 da.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {

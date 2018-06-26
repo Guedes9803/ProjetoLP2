@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TTAst.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="TTAst.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pnlVoltar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gYZEzEhoV33WQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABsSURBVDhP
+        pZO7DYAwDETTsACwMgVCCAmxBbtAYCLOhmvo7HvSU+LionycEqT5xhQj3N9pnAnesPcqyAwvmAovsMLO
+        qyArPGEqvEELt14FGeABU2FDXsCQjkCkSyTSMxKpkYjUykT6TOS3g1Ie78wTyIwgNhIAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="pnlProx.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gYZEzI1kKpw5wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABmSURBVDhP
+        Y8ACWKE02WA1EHdAmOQBESC+BMSdYB6ZAGTIRSDuAvPIBMJAfAGIu8E8MgHIkPNA3AvmkQmEgBhkSB+Y
+        RyYAGXIOiGvBPDIARQZQ5AWKApGiaKQoIVGclKmSmYgEDAwAjNMTjuqpb2wAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pnlVoltar2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gYZEzEhoV33WQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABsSURBVDhP
+        pZO7DYAwDETTsACwMgVCCAmxBbtAYCLOhmvo7HvSU+LionycEqT5xhQj3N9pnAnesPcqyAwvmAovsMLO
+        qyArPGEqvEELt14FGeABU2FDXsCQjkCkSyTSMxKpkYjUykT6TOS3g1Ie78wTyIwgNhIAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="pnlProx2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gYZEzI1kKpw5wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABmSURBVDhP
+        Y8ACWKE02WA1EHdAmOQBESC+BMSdYB6ZAGTIRSDuAvPIBMJAfAGIu8E8MgHIkPNA3AvmkQmEgBhkSB+Y
+        RyYAGXIOiGvBPDIARQZQ5AWKApGiaKQoIVGclKmSmYgEDAwAjNMTjuqpb2wAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

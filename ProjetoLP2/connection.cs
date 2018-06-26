@@ -12,10 +12,19 @@ namespace ProjetoLP2
         public MySqlConnection conn = new MySqlConnection();
         public void conectar()
         {
-            conn.ConnectionString = "Server=localhost; Database=CallistoTorneio; Uid=Projeto; Pwd=projeto;";
+            conn.ConnectionString = "Server=localhost; Database=callisto; Uid=Projeto;Pwd=projeto";
 
+            
             if (conn.State != System.Data.ConnectionState.Open)
+            {
                 conn.Open();
+            }
+            else
+            {
+                conn.Close();
+                conn.Open();
+            }
+                
         }
     }
 }

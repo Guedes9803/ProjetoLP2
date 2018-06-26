@@ -56,6 +56,8 @@
             this.txtPremio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TTast = new System.Windows.Forms.ToolTip(this.components);
+            this.addVariosPartControl1 = new ProjetoLP2.addVariosPartControl();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             this.lblDt_Inicio.Font = new System.Drawing.Font("Roboto", 12F);
             this.lblDt_Inicio.Location = new System.Drawing.Point(164, 111);
             this.lblDt_Inicio.Name = "lblDt_Inicio";
-            this.lblDt_Inicio.Size = new System.Drawing.Size(85, 19);
+            this.lblDt_Inicio.Size = new System.Drawing.Size(86, 19);
             this.lblDt_Inicio.TabIndex = 0;
             this.lblDt_Inicio.Text = "Data Inicio";
             // 
@@ -95,7 +97,7 @@
             this.lblQtd.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQtd.Location = new System.Drawing.Point(164, 226);
             this.lblQtd.Name = "lblQtd";
-            this.lblQtd.Size = new System.Drawing.Size(102, 19);
+            this.lblQtd.Size = new System.Drawing.Size(103, 19);
             this.lblQtd.TabIndex = 0;
             this.lblQtd.Text = "Participantes";
             // 
@@ -300,11 +302,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(505, 354);
+            this.label1.Location = new System.Drawing.Point(480, 346);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
             // 
             // lblPremio
             // 
@@ -312,14 +313,14 @@
             this.lblPremio.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPremio.Location = new System.Drawing.Point(164, 288);
             this.lblPremio.Name = "lblPremio";
-            this.lblPremio.Size = new System.Drawing.Size(59, 19);
+            this.lblPremio.Size = new System.Drawing.Size(60, 19);
             this.lblPremio.TabIndex = 0;
             this.lblPremio.Text = "Prêmio";
             // 
             // txtPremio
             // 
             this.txtPremio.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPremio.Location = new System.Drawing.Point(259, 288);
+            this.txtPremio.Location = new System.Drawing.Point(259, 280);
             this.txtPremio.Name = "txtPremio";
             this.txtPremio.Size = new System.Drawing.Size(349, 22);
             this.txtPremio.TabIndex = 10;
@@ -336,6 +337,30 @@
             this.label8.Text = "*";
             this.TTast.SetToolTip(this.label8, "Campo não obrigatorio");
             // 
+            // addVariosPartControl1
+            // 
+            this.addVariosPartControl1.Location = new System.Drawing.Point(-3, -3);
+            this.addVariosPartControl1.Name = "addVariosPartControl1";
+            this.addVariosPartControl1.Size = new System.Drawing.Size(864, 451);
+            this.addVariosPartControl1.TabIndex = 12;
+            this.addVariosPartControl1.Load += new System.EventHandler(this.addVariosPartControl1_Load);
+            this.addVariosPartControl1.VisibleChanged += new System.EventHandler(this.addVariosPartControl1_VisibleChanged);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(31, 40);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(80, 32);
+            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // criarTorneioControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,6 +368,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtPremio);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -363,6 +389,7 @@
             this.Controls.Add(this.lblDt_Inicio);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.addVariosPartControl1);
             this.Name = "criarTorneioControl";
             this.Size = new System.Drawing.Size(864, 451);
             this.Load += new System.EventHandler(this.criarTorneioControl_Load);
@@ -402,5 +429,7 @@
         private System.Windows.Forms.TextBox txtPremio;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolTip TTast;
+        private addVariosPartControl addVariosPartControl1;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

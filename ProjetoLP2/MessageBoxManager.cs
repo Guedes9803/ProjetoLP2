@@ -127,8 +127,8 @@ namespace System.Windows.Forms
         /// </remarks>
 		public static void Register()
 		{
-			if (hHook != IntPtr.Zero)
-				throw new NotSupportedException("One hook per thread allowed.");
+			//if (hHook != IntPtr.Zero)
+			//	throw new NotSupportedException("One hook per thread allowed.");
 			hHook = SetWindowsHookEx(WH_CALLWNDPROCRET, hookProc, IntPtr.Zero, AppDomain.GetCurrentThreadId());
 		}
 

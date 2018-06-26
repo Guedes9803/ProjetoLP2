@@ -121,6 +121,7 @@
             this.torneioInfoControl1.Name = "torneioInfoControl1";
             this.torneioInfoControl1.Size = new System.Drawing.Size(864, 478);
             this.torneioInfoControl1.TabIndex = 11;
+            this.torneioInfoControl1.VisibleChanged += new System.EventHandler(this.torneioInfoControl1_VisibleChanged);
             // 
             // TorneiosControl
             // 
@@ -130,9 +131,9 @@
             this.Controls.Add(this.btnVerInfo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCriar);
+            this.Controls.Add(this.torneioInfoControl1);
             this.Controls.Add(this.dtTeste);
             this.Controls.Add(this.criarTorneioControl1);
-            this.Controls.Add(this.torneioInfoControl1);
             this.Name = "TorneiosControl";
             this.Size = new System.Drawing.Size(984, 513);
             this.Load += new System.EventHandler(this.TorneiosControl_Load);

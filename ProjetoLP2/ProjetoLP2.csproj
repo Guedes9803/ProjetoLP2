@@ -69,6 +69,12 @@
     <Compile Include="altTorneioControl.Designer.cs">
       <DependentUpon>altTorneioControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calendario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calendario.Designer.cs">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </Compile>
     <Compile Include="connection.cs" />
     <Compile Include="criarTorneioControl.cs">
       <SubType>UserControl</SubType>
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tabelaTorneio16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tabelaTorneio16.Designer.cs">
+      <DependentUpon>tabelaTorneio16.cs</DependentUpon>
+    </Compile>
     <Compile Include="tabelaTorneio8.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,9 @@
     <EmbeddedResource Include="altTorneioControl.resx">
       <DependentUpon>altTorneioControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calendario.resx">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="criarTorneioControl.resx">
       <DependentUpon>criarTorneioControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +170,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="tabelaTorneio16.resx">
+      <DependentUpon>tabelaTorneio16.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tabelaTorneio8.resx">
       <DependentUpon>tabelaTorneio8.cs</DependentUpon>
     </EmbeddedResource>

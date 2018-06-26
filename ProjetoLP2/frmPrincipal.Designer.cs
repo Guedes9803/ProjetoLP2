@@ -39,7 +39,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fecharBtn = new System.Windows.Forms.Button();
+            this.calendario1 = new ProjetoLP2.Calendario();
             this.homeControl1 = new ProjetoLP2.HomeControl();
+            this.torneiosControl1 = new ProjetoLP2.TorneiosControl();
             this.partControl1 = new ProjetoLP2.partControl();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -178,6 +180,13 @@
             this.fecharBtn.UseVisualStyleBackColor = true;
             this.fecharBtn.Click += new System.EventHandler(this.button5_Click);
             // 
+            // calendario1
+            // 
+            this.calendario1.Location = new System.Drawing.Point(197, 120);
+            this.calendario1.Name = "calendario1";
+            this.calendario1.Size = new System.Drawing.Size(988, 559);
+            this.calendario1.TabIndex = 7;
+            // 
             // homeControl1
             // 
             this.homeControl1.Location = new System.Drawing.Point(199, 127);
@@ -185,23 +194,31 @@
             this.homeControl1.Size = new System.Drawing.Size(983, 513);
             this.homeControl1.TabIndex = 4;
             // 
+            // torneiosControl1
+            // 
+            this.torneiosControl1.Location = new System.Drawing.Point(197, 130);
+            this.torneiosControl1.Name = "torneiosControl1";
+            this.torneiosControl1.Size = new System.Drawing.Size(984, 513);
+            this.torneiosControl1.TabIndex = 5;
+            // 
             // partControl1
             // 
-            this.partControl1.Location = new System.Drawing.Point(199, 130);
+            this.partControl1.Location = new System.Drawing.Point(197, 126);
             this.partControl1.Name = "partControl1";
-            this.partControl1.Size = new System.Drawing.Size(988, 510);
+            this.partControl1.Size = new System.Drawing.Size(984, 513);
             this.partControl1.TabIndex = 6;
-            this.partControl1.Load += new System.EventHandler(this.partControl1_Load);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 643);
-            this.Controls.Add(this.homeControl1);
+            this.Controls.Add(this.calendario1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.homeControl1);
+            this.Controls.Add(this.torneiosControl1);
             this.Controls.Add(this.partControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
@@ -225,9 +242,11 @@
         private System.Windows.Forms.Panel SideBar;
         private System.Windows.Forms.Button fecharBtn;
         private System.Windows.Forms.Panel panel4;
-        private partControl partControl1;
         private System.Windows.Forms.Panel panel3;
         private HomeControl homeControl1;
+        private TorneiosControl torneiosControl1;
+        private partControl partControl1;
+        private Calendario calendario1;
     }
 }
 

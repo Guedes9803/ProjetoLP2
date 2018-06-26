@@ -55,6 +55,7 @@ namespace ProjetoLP2
                 qtdPart = dt.Rows[0][4].ToString();
                 lblRest.Text = dt.Rows[0][5].ToString();
                 qtdVagas = dt.Rows[0][5].ToString();
+                txtPremio.Text = dt.Rows[0][6].ToString();
                 preencheCombo(dtIni,dtFim);
                 preencheCheck(qtdPart);
             }
@@ -215,6 +216,7 @@ namespace ProjetoLP2
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             CheckData();
+            
         }
 
         private void CheckData()
@@ -228,21 +230,22 @@ namespace ProjetoLP2
                     if (dtInicial.Date < dtFinal.Date)
                     {
                         UpdateTorneio();
+                        label5.Text = "";
                     }
                     else
                     {
-                        label1.Text = "Data Invalida";
+                        label5.Text = "Data Invalida";
                     }
                 }
                 else
                 {
-                    label1.Text = "Por favor insira data de inicio e termino do torneio valida!";
+                    label5.Text = "Por favor insira data de inicio e termino do torneio valida!";
                 }
 
             }
             else
             {
-                label1.Text = "Insira o nome do Torneio";
+                label5.Text = "Insira o nome do Torneio";
             }
 
 
@@ -396,6 +399,7 @@ namespace ProjetoLP2
         private void addVariosPartControl1_VisibleChanged(object sender, EventArgs e)
         {
             PreencherTabela();
+            preencherCampos();
         }
         private void UpdateFont()
         {

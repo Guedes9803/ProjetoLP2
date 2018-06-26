@@ -13,7 +13,7 @@ namespace ProjetoLP2
 {
     public partial class TorneiosControl : UserControl
     {
-        private String id;
+        private String id = "-1";
         private String nome;
         private String dt_ini;
         private String dt_term;
@@ -93,9 +93,19 @@ namespace ProjetoLP2
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            torneioInfoControl1.Carrega(id);
-            torneioInfoControl1.BringToFront();
-            torneioInfoControl1.Visible = true;
+            if(id == "-1")
+            {
+
+               MessageBox.Show("Selecione um participante", "Participante não selecionada", MessageBoxButtons.OK);
+                
+            }
+            else
+            {
+                torneioInfoControl1.Carrega(id);
+                torneioInfoControl1.BringToFront();
+                torneioInfoControl1.Visible = true;
+            }
+
         }
 
         private void altTorneioControl1_Load(object sender, EventArgs e)
@@ -157,8 +167,8 @@ namespace ProjetoLP2
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    MessageBox.Show("Torneio possuie jogadores cadastrado, remova-os para poder deleta-lo", "Deletar Torneio", MessageBoxButtons.OK);
+                    
                 }
                 finally
                 {
@@ -181,6 +191,11 @@ namespace ProjetoLP2
             {
                 c.DefaultCellStyle.Font = new Font("Roboto", 12F, GraphicsUnit.Pixel);
             }
+        }
+
+        private void torneioInfoControl1_VisibleChanged(object sender, EventArgs e)
+        {
+            PreencherTabela();
         }
     }
 }

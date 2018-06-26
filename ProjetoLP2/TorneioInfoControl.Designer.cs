@@ -51,7 +51,10 @@
             this.radio16 = new System.Windows.Forms.RadioButton();
             this.radio8 = new System.Windows.Forms.RadioButton();
             this.lblRest = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.addVariosPartControl1 = new ProjetoLP2.addVariosPartControl();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPremio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPart)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +65,7 @@
             this.lblNome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblNome.Location = new System.Drawing.Point(39, 86);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(43, 14);
+            this.lblNome.Size = new System.Drawing.Size(41, 14);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome ";
             // 
@@ -102,7 +105,7 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label1.Location = new System.Drawing.Point(39, 270);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 14);
+            this.label1.Size = new System.Drawing.Size(99, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vagas Restantes";
             // 
@@ -300,6 +303,14 @@
             this.lblRest.TabIndex = 7;
             this.lblRest.Text = "label5";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(285, 258);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 9;
+            // 
             // addVariosPartControl1
             // 
             this.addVariosPartControl1.Location = new System.Drawing.Point(0, 0);
@@ -309,10 +320,31 @@
             this.addVariosPartControl1.Load += new System.EventHandler(this.addVariosPartControl1_Load);
             this.addVariosPartControl1.VisibleChanged += new System.EventHandler(this.addVariosPartControl1_VisibleChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.Location = new System.Drawing.Point(42, 305);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 14);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Prêmio";
+            // 
+            // txtPremio
+            // 
+            this.txtPremio.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPremio.Location = new System.Drawing.Point(211, 296);
+            this.txtPremio.Name = "txtPremio";
+            this.txtPremio.Size = new System.Drawing.Size(220, 22);
+            this.txtPremio.TabIndex = 11;
+            // 
             // TorneioInfoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtPremio);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblRest);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgPart);
@@ -371,5 +403,8 @@
         private System.Windows.Forms.RadioButton radio8;
         private System.Windows.Forms.Label lblRest;
         private addVariosPartControl addVariosPartControl1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPremio;
     }
 }

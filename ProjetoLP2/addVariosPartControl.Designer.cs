@@ -55,9 +55,9 @@
             // 
             this.lblTexto1.AutoSize = true;
             this.lblTexto1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.lblTexto1.Location = new System.Drawing.Point(341, 227);
+            this.lblTexto1.Location = new System.Drawing.Point(319, 236);
             this.lblTexto1.Name = "lblTexto1";
-            this.lblTexto1.Size = new System.Drawing.Size(211, 19);
+            this.lblTexto1.Size = new System.Drawing.Size(214, 19);
             this.lblTexto1.TabIndex = 0;
             this.lblTexto1.Text = "Torneio criado com sucesso!";
             // 
@@ -65,9 +65,9 @@
             // 
             this.lblTexto2.AutoSize = true;
             this.lblTexto2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.lblTexto2.Location = new System.Drawing.Point(325, 186);
+            this.lblTexto2.Location = new System.Drawing.Point(294, 195);
             this.lblTexto2.Name = "lblTexto2";
-            this.lblTexto2.Size = new System.Drawing.Size(271, 19);
+            this.lblTexto2.Size = new System.Drawing.Size(276, 19);
             this.lblTexto2.TabIndex = 1;
             this.lblTexto2.Text = " Deseja registrar os jogadores agora?";
             // 
@@ -126,7 +126,7 @@
             this.lblPersonagem.Font = new System.Drawing.Font("Roboto", 12F);
             this.lblPersonagem.Location = new System.Drawing.Point(237, 284);
             this.lblPersonagem.Name = "lblPersonagem";
-            this.lblPersonagem.Size = new System.Drawing.Size(98, 19);
+            this.lblPersonagem.Size = new System.Drawing.Size(99, 19);
             this.lblPersonagem.TabIndex = 6;
             this.lblPersonagem.Text = "Personagem";
             this.lblPersonagem.Click += new System.EventHandler(this.lblPersonagem_Click);
@@ -220,7 +220,7 @@
             this.lblSobre.Font = new System.Drawing.Font("Roboto", 12F);
             this.lblSobre.Location = new System.Drawing.Point(245, 205);
             this.lblSobre.Name = "lblSobre";
-            this.lblSobre.Size = new System.Drawing.Size(90, 19);
+            this.lblSobre.Size = new System.Drawing.Size(91, 19);
             this.lblSobre.TabIndex = 5;
             this.lblSobre.Text = "Sobrenome";
             // 
